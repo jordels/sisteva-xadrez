@@ -34,7 +34,7 @@ public class Board {
 
 	public Piece piece(Position position) {
 		if (!positionExists(position)) {
-			throw new BoardException("Position not in the board");
+			throw new BoardException ("Position not in the board");
 
 		}
 		return pieces[Position.getRow()][Position.getColumn()];
