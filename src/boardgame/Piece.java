@@ -15,9 +15,9 @@ public abstract class Piece {
 	}
 	public abstract boolean[][]possibleMoves();
 	
-	public boolean possibleMove(Position position) {
+	public boolean possibleMove(boardgame.Position target) {
 		
-		return possibleMoves()[position.getRow()][position.getColumn()]; 
+		return possibleMoves()[target.getRow()][target.getColumn()]; 
 	}
 	public boolean isThereAnyPossibleMove() {
 		boolean [][] mat = possibleMoves();
