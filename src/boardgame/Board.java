@@ -5,9 +5,9 @@ public class Board {
 	private int columns;
 	private Piece[][] pieces;
 
-	public Board(int row, int column) {
+	public Board(int row, int column)  {
 		if (rows < 1 || columns < 1) {
-			throw new BoardException (" Error creating board: thre must be at least 1 row ans 1 column");
+		//	throw new BoardException (" Error creating board: thre must be at least 1 row ans 1 column");
 
 		}
 
@@ -26,7 +26,7 @@ public class Board {
 
 	public Piece piece(int row, int column) {
 		if (!positionExists(row, column)) {
-			throw new BoardException ("Position not in the board");
+	//		throw new BoardException ("Position not in the board");
 
 		}
 		return pieces[row][column];
@@ -34,24 +34,24 @@ public class Board {
 
 	public Piece piece(Position position) {
 		if (!positionExists(position)) {
-			throw new BoardException ("Position not in the board");
+		//	throw new BoardException ("Position not in the board");
 
 		}
-		return pieces[Position.getRow()][Position.getColumn()];
+		return pieces[position.getRow()][position.getColumn()];
 	}
 
 	public void placePiece(Piece piece, Position position) {
 		if (thereIsAPiece(position)) {
-			throw new BoardException("There is aleady a piece on position" + position);
+		//	throw new BoardException("There is aleady a piece on position" + position);
 		}
 
-		pieces[position.getRow()][position.getColumn()] = pieces;
-		position.position = position ;
+		pieces[position.getRow()][position.getColumn()] = piece;
+		position = position ;
 	}
 	
 	public Piece removePiece(Position position) {
 		if(! positionExists(position)) {
-			throw new BoardException ("Position not in the board");
+		//	throw new BoardException ("Position not in the board");
 		}
 		if (piece(position) == null){
 			return null;
@@ -72,7 +72,7 @@ public class Board {
 
 	public boolean thereIsAPiece(Position position) {
 		if (!positionExists(position)) {
-			throw new BoardException("Position not in the board");
+		//	throw new BoardException("Position not in the board");
 
 		}
 		return piece(position) != null;
